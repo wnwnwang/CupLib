@@ -28,34 +28,6 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        def versionName = "1.0.1"
-
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.release
-
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.example.cuplib'
-                artifactId = 'cupLibTest'
-                version = versionName
-            }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                from components.debug
-
-                groupId = 'com.example.cuplib'
-                artifactId = 'cupLibTest'
-                version = versionName
-            }
-        }
-    }
-}
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
