@@ -8,7 +8,7 @@ task androidSourcesJar(type: Jar) {
 //第 1 处
 ext["signing.keyId"] = '74A31985' //签名的密钥后8位
 ext["signing.password"] = 'wnwnwang1231989'  //签名设置的密码
-ext["signing.secretKeyRingFile"] = 'D:\\WorkOrLearn\\wn_0x74A31985_public.asc' //生成的secring.gpg文件目录
+ext["signing.secretKeyRingFile"] = 'D:\\WorkOrLearn\\wn_0x74A31985_public.pgp' //生成的secring.gpg文件目录
 ext["ossrhUsername"] = 'wnwnwang'  //sonatype用户名
 ext["ossrhPassword"] = 'WNwang123@1989'  //sonatype密码
 
