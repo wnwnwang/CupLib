@@ -8,7 +8,7 @@ task androidSourcesJar(type: Jar) {
 //第 1 处
 ext["signing.keyId"] = '74A31985' //签名的密钥后8位
 ext["signing.password"] = 'wnwnwang1231989'  //签名设置的密码
-ext["signing.secretKeyRingFile"] = 'D:\\WorkOrLearn\\wn_0x74A31985_public.gpg' //生成的secring.gpg文件目录
+ext["signing.secretKeyRingFile"] = 'D:\\WorkOrLearn\\abc.gpg' //生成的secring.gpg文件目录
 ext["ossrhUsername"] = 'wnwnwang'  //sonatype用户名
 ext["ossrhPassword"] = 'WNwang123@1989'  //sonatype密码
 
@@ -24,6 +24,8 @@ if (secretPropsFile.exists()) {
     println "No props file, loading env vars"
 }
 publishing {
+
+
     publications {
         release(MavenPublication) {
             println("publish-maven Log-------> PUBLISH_GROUP_ID: $PUBLISH_GROUP_ID; PUBLISH_ARTIFACT_ID: $PUBLISH_ARTIFACT_ID; PUBLISH_VERSION: $PUBLISH_VERSION")
@@ -35,7 +37,7 @@ publishing {
             version PUBLISH_VERSION
 
             // Two artifacts, the `aar` and the sources
-            artifact("../plugin/com/eegets/plugin/upload/${PUBLISH_VERSION}/upload-${PUBLISH_VERSION}.jar")
+            artifact("../plugin/com/wnwnwang/plugin/upload/${PUBLISH_VERSION}/upload-${PUBLISH_VERSION}.jar")
             artifact androidSourcesJar
 
             // Self-explanatory metadata for the most part
@@ -85,6 +87,11 @@ publishing {
         }
     }
     repositories {
+
+        maven {
+            url = uri('../plugin')
+        }
+
         // The repository to publish to, Sonatype/MavenCentral
         maven {
             //第 6 处
