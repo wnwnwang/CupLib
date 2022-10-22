@@ -12,5 +12,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
         Log.e("wnwnwang", "BaseActivity onCreate");
+
     }
 }
